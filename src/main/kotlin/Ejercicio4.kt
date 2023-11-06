@@ -37,6 +37,7 @@ class ClaseEstudiantes(var lista: MutableList<Estudiante>){
                 res += "${estudiante}"
             }
         }
+        return res
     }
     fun mediaClase(): Double{
         var sumatoria = 0.0

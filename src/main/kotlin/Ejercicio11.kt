@@ -20,12 +20,34 @@ fun main(){
     var equipo16 = EquipoDeFutbol("Boca Juniors", "Argentina")
     var listaEquipos = mutableListOf<EquipoDeFutbol>(equipo1, equipo2, equipo3, equipo4, equipo5, equipo6,
         equipo7, equipo8, equipo9, equipo10, equipo11, equipo12, equipo13, equipo14, equipo15, equipo16)
+    println(imprimirEquiposChampions(championsLeague(listaEquipos)))
 }
 class EquipoDeFutbol(var nombre: String, var pais: String)
 
-fun championsLeague(lista: MutableList<EquipoDeFutbol>){
-    var listaChampions = MutableList<Pair<EquipoDeFutbol, EquipoDeFutbol>>(4)
+fun championsLeague(lista: MutableList<EquipoDeFutbol>): MutableList<Pair<EquipoDeFutbol, EquipoDeFutbol>> {
+    var listaEntrada = lista
+    var listaChampions = mutableListOf<Pair<EquipoDeFutbol, EquipoDeFutbol>>()
     val random = Random(System.currentTimeMillis())
-    val numeroAleatorio = random.nextInt(16)
+    for(i in 0..3){
+        //Primer equipo
+        val indicePrimerEquipo = random.nextInt(lista.size-1)
+        val primerEquipo = lista[indicePrimerEquipo]
+        listaEntrada.removeAt(indicePrimerEquipo)
+        //Segundo equipo
+        val indiceSegundoEquipo = random.nextInt(lista.size-1)
+        val segundoEquipo = lista[indiceSegundoEquipo]
+        listaEntrada.removeAt(indiceSegundoEquipo)
+        //Añadimos los dos equipos al par
+        listaChampions.add(Pair(primerEquipo, segundoEquipo))
+    }
+    return listaChampions
+}
+
+fun imprimirEquiposChampions(equiposChampions: MutableList<Pair<EquipoDeFutbol, EquipoDeFutbol>>): String{
+    var res = ""
+    for (i in equiposChampions.indices){
+        res += "${equiposChampions[i].first.nombre}(${equiposChampions[i].first.pais}) juega contra ${equiposChampions[i].second.nombre}(${equiposChampions[i].second.pais})\n"
+    }
+    return res
 }
 
