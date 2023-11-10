@@ -43,7 +43,5 @@ open class Circunferencia(var radio: Double = 0.0){
 }
 
 class Circulo(var radioCirculo: Double, var color: String): Circunferencia(){
-    constructor(){
 
-    }
 }
