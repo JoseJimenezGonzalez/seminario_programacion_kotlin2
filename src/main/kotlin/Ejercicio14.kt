@@ -14,17 +14,13 @@ fun main(){
     println(circunferencia1.toString())
     println(circunferencia2.toString())
 }
-data class Punto(val puntoEjeX: Double, val puntoEjeY: Double)
+data class Punto(val puntoEjeX: Double = 0.0, val puntoEjeY: Double = 0.0)
 
 class Circunferencia(var radio: Double = 0.0){
 
-    var puntoCircunferencia: Punto
-    var puntoCentroCircunferencia: Punto
+    var puntoCircunferencia: Punto = Punto()
+    var puntoCentroCircunferencia: Punto = Punto()
 
-    init {
-        puntoCircunferencia = Punto(0.0, 0.0)
-        puntoCentroCircunferencia = Punto(0.0, 0.0)
-    }
 
     constructor(puntoCircunferencia: Punto, puntoCentroCircunferencia: Punto): this(){
         this.puntoCircunferencia = puntoCircunferencia
