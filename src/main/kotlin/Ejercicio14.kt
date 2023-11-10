@@ -16,7 +16,7 @@ fun main(){
 }
 data class Punto(val puntoEjeX: Double = 0.0, val puntoEjeY: Double = 0.0)
 
-class Circunferencia(var radio: Double = 0.0){
+open class Circunferencia(var radio: Double = 0.0){
 
     var puntoCircunferencia: Punto = Punto()
     var puntoCentroCircunferencia: Punto = Punto()
@@ -40,4 +40,10 @@ class Circunferencia(var radio: Double = 0.0){
 
     override fun toString(): String = "Radio de la circunferencia: $radio\nCentro en la circunferencia: $puntoCentroCircunferencia\nPunto de la circunferencia: $puntoCircunferencia"
 
+}
+
+class Circulo(var radioCirculo: Double, var color: String): Circunferencia(){
+    constructor(){
+
+    }
 }
