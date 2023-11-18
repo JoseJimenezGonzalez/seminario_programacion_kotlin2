@@ -1,3 +1,5 @@
+package ejercicio1_6_7_8_9_10
+
 //Ejercicio 1. Crear la clase planeta. Propiedades: nombre, tipo y masa (con al menos 3 métodos)
 fun main(){
     val planeta1 = Planeta("Tierra", "Rocoso", 4.365724367327867E20)
@@ -65,7 +67,7 @@ class SistemaSolar(var listaPlanetas: MutableList<Planeta>){
     fun imprimirTodaInfo(): String{
         var res = ""
         listaPlanetas.forEach { planeta->
-            res += "${planeta.toString()}\n"
+            res += "$planeta\n"
         }
         return res
     }
@@ -74,7 +76,7 @@ class SistemaSolar(var listaPlanetas: MutableList<Planeta>){
         var res = ""
         listaPlanetas.forEach { elemento->
             if(elemento.nombre[0] == 'M'){
-                res += "${elemento.toString()}"
+                res += elemento.toString()
             }
         }
         if(res == ""){
@@ -88,7 +90,7 @@ class SistemaSolar(var listaPlanetas: MutableList<Planeta>){
         val masaTierra = 4.365724367327867E20
         listaPlanetas.forEach { planeta->
             if(planeta.masa > 20 * masaTierra){
-                res += "${planeta.toString()}\n"
+                res += "$planeta\n"
             }
         }
         if(res == ""){

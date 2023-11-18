@@ -1,3 +1,5 @@
+package ejercicio16
+
 fun main(){
     val numero1: Double = 5.0
     val numero2: Double = 6.0

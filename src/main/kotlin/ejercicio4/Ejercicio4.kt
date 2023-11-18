@@ -1,3 +1,5 @@
+package ejercicio4
+
 //Crea una clase llamada Estudiante que contenga información como nombre, edad y
 //calificaciones. Luego, crea una lista de objetos Estudiante y permite a los usuarios agregar
 //nuevos estudiantes, mostrar la información de un estudiante en particular y calcular el promedio

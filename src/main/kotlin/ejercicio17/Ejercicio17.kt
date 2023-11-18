@@ -1,3 +1,5 @@
+package ejercicio17
+
 class Prueba {
     fun ejecutarPruebas() {
         // Crear un bloc de notas de ejemplo

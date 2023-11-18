@@ -1,3 +1,5 @@
+package ejercicio2
+
 import kotlin.math.pow
 
 //Ejercicio 2. Crear la clase triangulo. Propiedades: longitud de los tres lados, perímetro, tipo de

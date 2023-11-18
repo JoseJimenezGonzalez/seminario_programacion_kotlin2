@@ -1,3 +1,5 @@
+package ejercicio3
+
 //Crea una clase llamada Contacto que represente la información de un contacto en una lista de
 //contactos. La clase debe tener propiedades como nombre, número de teléfono y dirección de
 //correo electrónico. Luego, crea una lista de objetos Contacto y permite a los usuarios agregar,

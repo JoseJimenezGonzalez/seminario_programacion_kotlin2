@@ -1,9 +1,14 @@
+package ejercicio5
+
 fun main(){
     val producto1 = Producto("Television LG", 500.76, 5)
     val producto2 = Producto("Frigorifico Bosh", 1500.00, 1)
     val lista = Inventario(mutableListOf(producto1, producto2))
     println(lista.imprimirTodo())
     producto2.actualizarStock(15)
+    println(lista.imprimirTodo())
+    val producto3 = Producto("Lavadora LG", 495.00, 2)
+    lista.agregarProducto(producto3)
     println(lista.imprimirTodo())
 
 }

@@ -1,16 +1,18 @@
+package ejercicio19
+
 open class PNJ(var nombre: String, var PV: Int, var PM: Int, var LVL: Int){
     open fun levelUp(){
         LVL++
     }
 }
-class Guerrero(nombre: String, PV: Int, PM: Int, LVL: Int):PNJ(nombre, PV, PM, LVL){
+class Guerrero(nombre: String, PV: Int, PM: Int, LVL: Int): PNJ(nombre, PV, PM, LVL){
     override fun levelUp(){
         super.levelUp()
         PV += PV * 8 / 100
         PM += PM * 1 / 100
     }
 }
-class Mago(nombre: String, PV: Int, PM: Int, LVL: Int):PNJ(nombre, PV, PM, LVL){
+class Mago(nombre: String, PV: Int, PM: Int, LVL: Int): PNJ(nombre, PV, PM, LVL){
     override fun levelUp(){
         super.levelUp()
         PV += PV * 4 / 100
