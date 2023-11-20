@@ -11,10 +11,14 @@ import kotlin.math.sqrt
 //toString() de forma que muestre toda la info de la circunferencia
 
 fun main(){
-    val circunferencia1: Circunferencia = Circunferencia(5.39)
-    val circunferencia2: Circunferencia = Circunferencia(Punto(0.0, 9.0), Punto(0.0, 0.0))
+    val circunferencia1 = Circunferencia(5.39)
+    val circunferencia2 = Circunferencia(Punto(0.0, 9.0), Punto(0.0, 0.0))
     println(circunferencia1.toString())
     println(circunferencia2.toString())
+    val circulo1 = Circulo(Punto(0.0, 9.0), Punto(0.0, 0.0),"rojo")
+    println(circulo1.toString())
+    val circulo2 = Circulo(5.69, "azul")
+    println(circulo2.toString())
 }
 data class Punto(val puntoEjeX: Double = 0.0, val puntoEjeY: Double = 0.0)
 
@@ -32,7 +36,7 @@ open class Circunferencia(var radio: Double = 0.0){
 
     fun longitud(): Double = 2*PI*radio
 
-    fun calcularRadio(): Double{
+    open fun calcularRadio(): Double{
         val puntoX1 = puntoCentroCircunferencia.puntoEjeX.absoluteValue
         val puntoX2 = puntoCircunferencia.puntoEjeX.absoluteValue
         val puntoY1 = puntoCentroCircunferencia.puntoEjeY.absoluteValue
@@ -44,6 +48,16 @@ open class Circunferencia(var radio: Double = 0.0){
 
 }
 
-class Circulo(var radioCirculo: Double, var color: String): Circunferencia(){
+class Circulo(radio: Double = 0.0, var color: String = ""): Circunferencia(radio = radio){
 
+    constructor(centro: Punto, puntoCualquiera: Punto, color: String): this(color = color){
+        this.puntoCircunferencia = puntoCualquiera
+        this.puntoCentroCircunferencia = centro
+        this.radio = calcularRadio()
+    }
+    fun calcularArea(): Double = PI * radio * radio
+    override fun toString(): String {
+        val padreString = super.toString()
+        return padreString + "Color del circulo: $color\nÁrea del circulo: ${calcularArea()}\n"
+    }
 }
