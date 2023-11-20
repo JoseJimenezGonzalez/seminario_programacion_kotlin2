@@ -34,7 +34,7 @@ open class Circunferencia(var radio: Double = 0.0){
         this.radio = calcularRadio()
     }
 
-    fun longitud(): Double = 2*PI*radio
+    fun longitud(): Double = 2 * PI * radio
 
     open fun calcularRadio(): Double{
         val puntoX1 = puntoCentroCircunferencia.puntoEjeX.absoluteValue
@@ -47,17 +47,20 @@ open class Circunferencia(var radio: Double = 0.0){
     override fun toString(): String = "Radio de la circunferencia: $radio\nCentro en la circunferencia: $puntoCentroCircunferencia\nPunto de la circunferencia: $puntoCircunferencia"
 
 }
-
+//: Circunferencia(radio = radio) -> Le tenemos que especificar para que lo construya el padre
 class Circulo(radio: Double = 0.0, var color: String = ""): Circunferencia(radio = radio){
-
+    // : this(color = color) -> Lo construye a traves del constructor primario
     constructor(centro: Punto, puntoCualquiera: Punto, color: String): this(color = color){
-        this.puntoCircunferencia = puntoCualquiera
+        //Secuencia : el secundario llama al principal y este llama al constructor de la clase padre, por eso podemos acceder a estos
         this.puntoCentroCircunferencia = centro
+        this.puntoCircunferencia = puntoCualquiera
         this.radio = calcularRadio()
     }
     fun calcularArea(): Double = PI * radio * radio
     override fun toString(): String {
+        // Me da el resultado del padre
         val padreString = super.toString()
+        // Le añado mas cosas aparte de las del padre
         return padreString + "Color del circulo: $color\nÁrea del circulo: ${calcularArea()}\n"
     }
 }
