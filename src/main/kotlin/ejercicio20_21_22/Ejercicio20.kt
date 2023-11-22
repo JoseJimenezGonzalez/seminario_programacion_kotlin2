@@ -1,4 +1,4 @@
-package ejercicio20
+package ejercicio20_21_22
 
 //Ejercicio 20. Crea la clase de datos Videojuego, que tendrá nombre, año y plataforma del
 //juego. Crea una lista con 8 videojuegos de tres plataformas distintas. Crea una función
